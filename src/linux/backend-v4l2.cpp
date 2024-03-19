@@ -1010,7 +1010,9 @@ namespace librealsense
                         // filter out all posible codecs, work only with compatible driver
                         static const std::regex rs_mipi_compatible(".vi:|ipu6");
                         info = get_info_from_mipi_device_path(video_path, name);
+                        std::cout << info.unique_id << std::endl;
                         if (!regex_search(info.unique_id, rs_mipi_compatible)) {
+                            std::cout << "continuing" << std::endl;
                             continue;
                         }
                     }
