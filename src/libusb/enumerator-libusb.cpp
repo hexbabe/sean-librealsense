@@ -7,6 +7,7 @@
 #include "types.h"
 
 #include "libusb.h"
+#include <iostream>
 
 namespace librealsense
 {
@@ -69,6 +70,7 @@ namespace librealsense
                     info.pid = desc.idProduct;
                     info.mi = i;
                     info.cls = usb_class(inf.altsetting->bInterfaceClass);
+                    std::cout << "Found UVC device: " << std::string(info).c_str() << std::endl;
                     rv.push_back(info);
                 }
 
