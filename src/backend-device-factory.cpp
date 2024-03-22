@@ -189,7 +189,8 @@ std::vector< std::shared_ptr< device_info > > backend_device_factory::query_devi
 
 std::vector< std::shared_ptr< platform::platform_device_info > >
 backend_device_factory::create_devices_from_group( platform::backend_device_group devices, int requested_mask ) const
-{
+;
+    std::cout << "what" << std::endl;
     auto ctx = get_context();
     std::vector< std::shared_ptr< platform::platform_device_info > > list;
     unsigned const mask = context::combine_device_masks( requested_mask, ctx->get_device_mask() );
