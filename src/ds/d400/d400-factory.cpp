@@ -1101,7 +1101,7 @@ namespace librealsense
 
         auto valid_pid = filter_by_product(group.uvc_devices, ds::rs400_sku_pid);
         auto group_devices = group_devices_and_hids_by_unique_id(group_devices_by_unique_id(valid_pid), group.hid_devices);
-
+        std::cout << "sanity check" << std::endl;
         for (auto& g : group_devices)
         {
             auto& devices = g.first;
