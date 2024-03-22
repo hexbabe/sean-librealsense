@@ -6,6 +6,7 @@
 #include "uvc-streamer.h"
 
 #include <rsutils/string/from.h>
+#include <iostream>
 
 #define UVC_AE_MODE_D0_MANUAL   ( 1 << 0 )
 #define UVC_AE_MODE_D1_AUTO     ( 1 << 1 )
@@ -57,6 +58,7 @@ namespace librealsense
                 device_info.unique_id = info.unique_id;
                 device_info.device_path = info.id;
                 device_info.conn_spec = info.conn_spec;
+                std::cout << "Found UVC device: " << std::string(device_info).c_str() << std::endl;
                 //LOG_INFO("Found UVC device: " << std::string(device_info).c_str());
                 rv.push_back(device_info);
             }
